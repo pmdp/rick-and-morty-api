@@ -25,7 +25,7 @@ public class CharacterService {
         Character character = new Character().withName(name).filter().stream().findFirst()
             .orElseThrow(CharacterNotFoundApiError::new);
         characterAppearancesDTO.setName(character.getName());
-        log.info("Character found: {}", character);
+        log.info("Character found: {}", character.getName());
         // Only returns episodes Ids
         List<Episode> characterEpisodes = character.getEpisodes();
         // Also get each episode info (name)
