@@ -47,5 +47,9 @@ and should get something like:
 
 ## ToDos
 
-- Improve the way that consumes the Rick And Morty API, asyncronus? caching data? Persist in document DB (e.g MongoDB)?
+- Improve the way that consumes the Rick And Morty API:
+    - Use the Rick And Morty Episode endpoint that allow multiple Ids, in order to retrieve all of them at once
+    - Asyncronus threaded parallel requests?
+    - Caching data?
+    - Persist data in document DB (e.g MongoDB)?
 - Implement some unit and integrated testing
