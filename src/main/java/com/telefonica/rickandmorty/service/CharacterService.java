@@ -8,6 +8,8 @@ import com.telefonica.rickandmorty.exception.CharacterWithEmptyEpisodesApiError;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.threeten.bp.format.DateTimeFormatter;
+
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.stream.Collectors;
@@ -31,7 +33,7 @@ public class CharacterService {
         characterAppearancesDTO.setEpisodes(characterEpisodes.stream()
             .map(Episode::getName).collect(Collectors.toList()));
         // Get the first Character Episode by show date (air_date)
-        Episode firstEpisode = characterEpisodes.stream().findFirst()
+        Episode firstEpisode = characterEpisodes.stream().min(Comparator.comparing(Episode::getShowDate))
             .orElseThrow(CharacterWithEmptyEpisodesApiError::new);
         characterAppearancesDTO.setFirstAppearance(firstEpisode.getShowDate()
             .format(DateTimeFormatter.ofPattern("d MMMM YYYY", Locale.forLanguageTag("es-ES"))));
