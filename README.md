@@ -1,13 +1,13 @@
 # Rick And Morty Tech Exercise
 
-This Spring Boot App were created using [Spring Initialzr](https://start.spring.io/).
+This Spring Boot App was created using [Spring Initialzr](https://start.spring.io/).
 
-The used versions are:
+Used versions are:
 - Java 17
 - Spring Boot 2.7.4
 
 To be able to consume the [Rick and Morty API](https://rickandmortyapi.com/documentation/) uses the
-Java library that appears in the documentation: https://github.com/adrianoluis/rickandmortyapi-java,
+Java library that appears in the documentation (https://github.com/adrianoluis/rickandmortyapi-java),
 installed as maven dependency.
 
 The app is packaged per layer, having these packages available:
